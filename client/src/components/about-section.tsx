@@ -38,15 +38,14 @@ export default function AboutSection() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <h3 className="text-2xl font-bold mb-6 text-[var(--matrix-green)]">Passionate Data Scientist</h3>
+            <h3 className="text-2xl font-bold mb-6 text-[var(--matrix-green)]">Data Analyst & Aspiring Data Scientist</h3>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Highly motivated data scientist with a strong foundation in data analysis, statistical modeling, and machine learning. 
-              Proficient in Python with expertise in data visualization and MySQL database management.
+              Currently working as a Data Analyst with proven expertise in automation, dashboard creation, and business intelligence. 
+              Proficient in Python, SQL, Excel, and data visualization tools with hands-on experience in improving operational efficiency.
             </p>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Skilled in data cleaning and exploratory data analysis (EDA), adept at problem-solving and extracting insights 
-              from complex datasets. Possesses a solid understanding of data mining techniques and a passion for leveraging 
-              data to drive actionable business decisions.
+              Actively expanding into data science through machine learning projects and statistical modeling. 
+              Passionate about transforming complex datasets into strategic insights that drive measurable business outcomes.
             </p>
             
             <div className="grid grid-cols-2 gap-6">

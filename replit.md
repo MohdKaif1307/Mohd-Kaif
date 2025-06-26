@@ -119,6 +119,10 @@ Changelog:
 - June 26, 2025. Enhanced photo styling with warm green/white background effects
 - June 26, 2025. Updated all content with latest resume data and achievements
 - June 26, 2025. Added Profile navigation link and section integration
+- June 26, 2025. Removed internship section from experience timeline
+- June 26, 2025. Updated positioning to "Data Analyst & Aspiring Data Scientist"
+- June 26, 2025. Removed PostgreSQL, Tableau, ETL Process, Business Intelligence from skills
+- June 26, 2025. Confirmed LinkedIn icon is clickable across all sections
 ```
 
 ## User Preferences

@@ -23,11 +23,11 @@ export default function Profile() {
 
   const personalInfo = {
     name: "Mohd Kaif",
-    title: "Data Analyst & Data Scientist",
+    title: "Data Analyst & Aspiring Data Scientist",
     email: "mr.kabir14320@gmail.com",
     phone: "+91 93368 28088",
     location: "Haryana, India",
-    linkedin: "https://linkedin.com/in/mohd-kaif-054b17262"
+    linkedin: "https://www.linkedin.com/in/mohd-kaif-054b17262/"
   };
 
   const education = {
@@ -218,8 +218,8 @@ export default function Profile() {
                       "Machine Learning",
                       "Statistical Modeling",
                       "Data Visualization",
-                      "Business Intelligence",
-                      "ETL Processes",
+                      "Excel & VBA",
+                      "Power BI",
                       "Dashboard Creation"
                     ].map((skill, index) => (
                       <motion.div 
@@ -251,11 +251,11 @@ export default function Profile() {
               </h3>
               
               <p className="text-gray-300 leading-relaxed text-lg">
-                Results-oriented Data Analyst skilled in leveraging SQL, Python, and BI tools to drive actionable 
-                insights and business decisions. Proven track record of automating workflows, enhancing data 
-                accuracy, and creating dashboards that improve executive visibility. Eager to contribute 
-                analytical expertise to fast-paced, data-driven teams while transforming complex datasets 
-                into strategic business value.
+                Results-oriented Data Analyst with proven expertise in Python, SQL, and analytics tools, 
+                currently driving business insights through automation and dashboard creation. Actively expanding 
+                into data science through machine learning projects and statistical modeling. Passionate about 
+                transforming complex datasets into strategic business value while building expertise in advanced 
+                analytics and predictive modeling.
               </p>
             </motion.div>
           </div>

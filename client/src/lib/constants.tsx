@@ -18,12 +18,7 @@ export const skillsData = [
     level: 90,
     category: 'tools' as const
   },
-  {
-    name: "Tableau",
-    icon: "fas fa-chart-line",
-    level: 80,
-    category: 'tools' as const
-  },
+
   {
     name: "Power BI",
     icon: "fas fa-chart-area",
@@ -36,12 +31,7 @@ export const skillsData = [
     level: 85,
     category: 'programming' as const
   },
-  {
-    name: "PostgreSQL",
-    icon: "fas fa-database",
-    level: 80,
-    category: 'programming' as const
-  },
+
   {
     name: "Data Visualization",
     icon: "fas fa-chart-pie",
@@ -103,19 +93,7 @@ export const experienceData = [
       "Delivered 5+ cross-functional reports/month in partnership with sales and marketing"
     ]
   },
-  {
-    position: "Data Scientist",
-    company: "A.A.M Infotech Pvt. Ltd.",
-    location: "Gurugram, India (Internship)",
-    period: "February - October 2023",
-    current: false,
-    responsibilities: [
-      "Used automated tools to extract data from primary and secondary sources",
-      "Created data visualization graphics using Python and Tableau, translating complex datasets into comprehensive visual representations",
-      "Performed data extraction and manipulation using MySQL",
-      "Performed data analysis and modeling using Excel, identifying key trends and patterns for strategic insights"
-    ]
-  }
+
 ];
 
 // Projects data extracted from resume
@@ -134,7 +112,7 @@ export const projectsData = [
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     category: "SQL Project",
     icon: "fas fa-database",
-    technologies: ["SQL", "Database Design", "ETL", "Business Intelligence"]
+    technologies: ["SQL", "Database Design", "Data Analysis", "Reporting"]
   },
   {
     title: "House Price Prediction (Kaggle)",

@@ -51,7 +51,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Data Scientist & Analytics Expert
+              Data Analyst & Aspiring Data Scientist
             </motion.h2>
             
             <motion.p 
@@ -60,8 +60,8 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Transforming complex data into actionable insights with Python, ML, and advanced analytics. 
-              Passionate about leveraging data to drive strategic business decisions.
+              Currently analyzing data to drive business decisions, while expanding expertise in machine learning 
+              and advanced analytics to transition into data science roles.
             </motion.p>
             
             <motion.div 
