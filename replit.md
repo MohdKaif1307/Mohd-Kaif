@@ -114,6 +114,11 @@ This is a modern, responsive portfolio website built for Mohd Kaif, a data scien
 ```
 Changelog:
 - June 26, 2025. Initial setup
+- June 26, 2025. Added resume download functionality with actual PDF file
+- June 26, 2025. Created comprehensive Profile section with professional photo
+- June 26, 2025. Enhanced photo styling with warm green/white background effects
+- June 26, 2025. Updated all content with latest resume data and achievements
+- June 26, 2025. Added Profile navigation link and section integration
 ```
 
 ## User Preferences

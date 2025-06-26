@@ -9,20 +9,44 @@ export const skillsData = [
   {
     name: "SQL",
     icon: "fas fa-database",
-    level: 85,
+    level: 90,
     category: 'programming' as const
   },
   {
     name: "Excel & VBA",
     icon: "fas fa-file-excel",
-    level: 80,
+    level: 90,
     category: 'tools' as const
   },
   {
     name: "Tableau",
     icon: "fas fa-chart-line",
+    level: 80,
+    category: 'tools' as const
+  },
+  {
+    name: "Power BI",
+    icon: "fas fa-chart-area",
     level: 75,
     category: 'tools' as const
+  },
+  {
+    name: "MySQL",
+    icon: "fas fa-server",
+    level: 85,
+    category: 'programming' as const
+  },
+  {
+    name: "PostgreSQL",
+    icon: "fas fa-database",
+    level: 80,
+    category: 'programming' as const
+  },
+  {
+    name: "Data Visualization",
+    icon: "fas fa-chart-pie",
+    level: 85,
+    category: 'analytics' as const
   },
   {
     name: "Machine Learning",
@@ -37,16 +61,16 @@ export const skillsData = [
     category: 'analytics' as const
   },
   {
-    name: "Data Mining",
-    icon: "fas fa-search",
-    level: 80,
+    name: "Data Cleaning",
+    icon: "fas fa-broom",
+    level: 90,
     category: 'analytics' as const
   },
   {
-    name: "Web Scraping",
-    icon: "fas fa-spider",
-    level: 70,
-    category: 'programming' as const
+    name: "Google Sheets",
+    icon: "fas fa-table",
+    level: 85,
+    category: 'tools' as const
   }
 ];
 
@@ -59,10 +83,10 @@ export const experienceData = [
     period: "August 2024 - Present",
     current: true,
     responsibilities: [
-      "Managed and analyzed large datasets using Excel, ensuring accuracy and delivering actionable insights for business decisions",
-      "Automated data workflows using Google Apps Script and developed Python scripts with Selenium and Beautiful Soup for web scraping",
-      "Maintained CRM systems and engaged with clients during site visits to gather requirements and provide tailored data solutions",
-      "Created impactful dashboards and visualizations to communicate data insights effectively to stakeholders"
+      "Automated 6+ manual reporting tasks via Python & Google Apps Script, saving 10+ hours/week",
+      "Created real-time dashboards for leadership, accelerating decision-making by 25%",
+      "Improved CRM data accuracy by 15% through structured feedback and database checks",
+      "Captured client insights at events, resulting in 10% better alignment of offerings to client needs"
     ]
   },
   {
@@ -72,10 +96,11 @@ export const experienceData = [
     period: "October 2023 - June 2024",
     current: false,
     responsibilities: [
-      "Utilized advanced Excel functions (VLOOKUP, PivotTables, Macros) to analyze data, improving reporting efficiency by 30%",
-      "Developed and maintained complex SQL queries to extract, manipulate, and analyze large datasets from diverse sources",
-      "Created data-driven dashboards in Excel and Tableau, presenting insights to stakeholders for strategic decision-making",
-      "Conducted statistical analysis using Excel and Python to identify trends, patterns, and anomalies in datasets"
+      "Streamlined Excel workflows (VLOOKUP, Macros) reducing report turnaround by 30%",
+      "Wrote complex SQL queries on 500K+ records to generate campaign insights",
+      "Built Tableau dashboards presented in weekly exec meetings, steering sales decisions",
+      "Analyzed return data; enabled 12% reduction through quality-based interventions",
+      "Delivered 5+ cross-functional reports/month in partnership with sales and marketing"
     ]
   },
   {
@@ -96,28 +121,28 @@ export const experienceData = [
 // Projects data extracted from resume
 export const projectsData = [
   {
-    title: "Sales Analysis Dashboard",
-    description: "Comprehensive sales data analysis identifying top-selling products, profit margins, and peak time periods. Utilized advanced Excel functions and VBA for data manipulation and automated reporting.",
+    title: "Sales Dashboard (Excel & VBA)",
+    description: "Pinpointed top-selling SKUs and seasonal trends, optimizing product focus. Comprehensive sales data analysis identifying profit margins and peak time periods with automated reporting capabilities.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     category: "Excel & VBA",
     icon: "fas fa-chart-line",
-    technologies: ["Excel", "VBA", "Data Analysis"]
+    technologies: ["Excel", "VBA", "Data Analysis", "Automation"]
   },
   {
-    title: "Pizza Delivery Analytics",
-    description: "Created comprehensive database schema and performed complex SQL queries to analyze pizza delivery operations. Implemented DDL/DML queries for data cleaning and optimization.",
+    title: "SQL-Based Pizza Sales Analysis",
+    description: "Designed schema, cleansed data, and generated insights for business strategy. Created comprehensive database with DDL/DML queries for pizza delivery operations optimization.",
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     category: "SQL Project",
     icon: "fas fa-database",
-    technologies: ["SQL", "Database Design", "ETL"]
+    technologies: ["SQL", "Database Design", "ETL", "Business Intelligence"]
   },
   {
-    title: "Real Estate Price Prediction",
-    description: "Developed ML model to predict residential housing prices using KC House dataset. Analyzed features like bedrooms, bathrooms, and square footage for accurate market predictions.",
+    title: "House Price Prediction (Kaggle)",
+    description: "Built regression model boosting accuracy of property value estimates. Analyzed features like bedrooms, bathrooms, and square footage for real estate investment decisions.",
     image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     category: "Machine Learning",
     icon: "fas fa-brain",
-    technologies: ["Python", "Machine Learning", "Regression"]
+    technologies: ["Python", "Machine Learning", "Regression", "Kaggle"]
   }
 ];
 
@@ -125,17 +150,17 @@ export const projectsData = [
 export const educationData = [
   {
     degree: "Bachelor of Science (B.Sc)",
-    institution: "Professor Rajendra Prasad University, U.P.",
+    institution: "Prof. Rajendra Prasad University",
     year: "2023"
   },
   {
-    degree: "Class 12th",
-    institution: "Mother Suhag Inter College, U.P.",
+    degree: "12th Grade",
+    institution: "Mother Suhag Inter College",
     year: "2019"
   },
   {
-    degree: "Class 10th",
-    institution: "Mother Suhag Inter College, U.P.",
+    degree: "10th Grade",
+    institution: "Mother Suhag Inter College",
     year: "2017"
   }
 ];
@@ -144,7 +169,7 @@ export const educationData = [
 export const certificationData = [
   {
     title: "Data Scientist with Python",
-    issuer: "Ducat INDIA, Gurugram",
-    skills: ["Python", "Data Science"]
+    issuer: "Ducat India, Gurugram",
+    skills: ["Python", "Data Science", "Analytics", "Machine Learning"]
   }
 ];

@@ -42,7 +42,7 @@ export default function Navigation() {
           </motion.div>
           
           <div className="hidden md:flex space-x-8">
-            {['home', 'about', 'skills', 'experience', 'projects', 'contact'].map((item) => (
+            {['home', 'about', 'skills', 'experience', 'projects', 'profile', 'contact'].map((item) => (
               <motion.button
                 key={item}
                 onClick={() => scrollToSection(item)}
@@ -71,7 +71,7 @@ export default function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
           >
-            {['home', 'about', 'skills', 'experience', 'projects', 'contact'].map((item) => (
+            {['home', 'about', 'skills', 'experience', 'projects', 'profile', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}

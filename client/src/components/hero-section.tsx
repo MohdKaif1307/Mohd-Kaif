@@ -4,11 +4,13 @@ import FloatingParticles from "@/components/ui/floating-particles";
 
 export default function HeroSection() {
   const downloadResume = () => {
-    // Create a blob with resume content or trigger download
     const link = document.createElement('a');
-    link.href = '#';
+    link.href = '/resume/Mohd_Kaif_Resume.pdf';
     link.download = 'Mohd_Kaif_Resume.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
   };
 
   const viewProjects = () => {
