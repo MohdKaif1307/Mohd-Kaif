@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,16 +34,18 @@ export default function Navigation() {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <motion.div 
-            className="font-orbitron font-bold text-xl text-[var(--matrix-green)] neon-glow"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            MK.dev
-          </motion.div>
+          <Link href="/">
+            <motion.div 
+              className="font-orbitron font-bold text-xl text-[var(--matrix-green)] neon-glow cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              MK.dev
+            </motion.div>
+          </Link>
           
-          <div className="hidden md:flex space-x-8">
-            {['home', 'about', 'skills', 'experience', 'projects', 'profile', 'contact'].map((item) => (
+          <div className="hidden md:flex space-x-8 items-center">
+            {['home', 'about', 'skills', 'experience', 'projects', 'contact'].map((item) => (
               <motion.button
                 key={item}
                 onClick={() => scrollToSection(item)}
@@ -53,6 +56,17 @@ export default function Navigation() {
                 {item}
               </motion.button>
             ))}
+            
+            <Link href="/profile">
+              <motion.div
+                className="w-10 h-10 rounded-full bg-[var(--matrix-green)]/20 border-2 border-[var(--matrix-green)] flex items-center justify-center hover:bg-[var(--matrix-green)]/30 transition-all duration-300 cursor-pointer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                title="View Profile"
+              >
+                <i className="fas fa-user text-[var(--matrix-green)]"></i>
+              </motion.div>
+            </Link>
           </div>
           
           <button 
@@ -71,7 +85,7 @@ export default function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
           >
-            {['home', 'about', 'skills', 'experience', 'projects', 'profile', 'contact'].map((item) => (
+            {['home', 'about', 'skills', 'experience', 'projects', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
@@ -80,6 +94,13 @@ export default function Navigation() {
                 {item}
               </button>
             ))}
+            
+            <Link href="/profile">
+              <div className="flex items-center py-2 hover:text-[var(--matrix-green)] transition-colors duration-300">
+                <i className="fas fa-user mr-2"></i>
+                Profile
+              </div>
+            </Link>
           </motion.div>
         )}
       </div>

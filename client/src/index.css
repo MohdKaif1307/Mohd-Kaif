@@ -161,36 +161,43 @@
   .profile-photo {
     position: relative;
     background: linear-gradient(135deg, 
-      hsla(158, 64%, 52%, 0.3) 0%, 
-      hsla(0, 0%, 100%, 0.1) 50%, 
-      hsla(158, 64%, 52%, 0.2) 100%);
-    backdrop-filter: blur(20px);
-    border: 3px solid hsla(158, 64%, 52%, 0.5);
+      hsla(158, 64%, 52%, 0.15) 0%, 
+      hsla(0, 0%, 100%, 0.8) 30%, 
+      hsla(158, 64%, 52%, 0.25) 100%);
+    border: 4px solid hsla(158, 64%, 52%, 0.6);
     box-shadow: 
-      0 0 30px hsla(158, 64%, 52%, 0.4),
-      inset 0 0 30px hsla(0, 0%, 100%, 0.1);
+      0 0 40px hsla(158, 64%, 52%, 0.3),
+      0 0 80px hsla(158, 64%, 52%, 0.1),
+      inset 0 0 50px hsla(0, 0%, 100%, 0.2);
   }
 
   .profile-photo::before {
     content: '';
     position: absolute;
-    inset: -3px;
-    background: linear-gradient(135deg, 
-      hsl(158, 64%, 52%) 0%, 
-      hsla(0, 0%, 100%, 0.8) 50%, 
-      hsl(158, 64%, 52%) 100%);
+    inset: -4px;
+    background: conic-gradient(
+      from 0deg,
+      hsl(158, 64%, 52%) 0%,
+      hsla(0, 0%, 100%, 0.9) 25%,
+      hsl(158, 64%, 52%) 50%,
+      hsla(0, 0%, 100%, 0.9) 75%,
+      hsl(158, 64%, 52%) 100%
+    );
     border-radius: inherit;
     z-index: -1;
-    opacity: 0.8;
+    animation: rotate 8s linear infinite;
   }
 
   .profile-photo::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 30% 30%, 
-      hsla(0, 0%, 100%, 0.3) 0%, 
-      transparent 60%);
+    background: radial-gradient(
+      circle at 35% 25%, 
+      hsla(0, 0%, 100%, 0.4) 0%, 
+      hsla(0, 0%, 100%, 0.1) 40%,
+      transparent 70%
+    );
     border-radius: inherit;
     pointer-events: none;
   }
@@ -198,8 +205,22 @@
   .profile-photo img {
     position: relative;
     z-index: 1;
-    mix-blend-mode: multiply;
-    filter: contrast(1.1) brightness(1.05) saturate(1.1);
+    filter: 
+      contrast(1.15) 
+      brightness(1.1) 
+      saturate(1.1)
+      drop-shadow(0 0 20px hsla(158, 64%, 52%, 0.3));
+    background: 
+      radial-gradient(ellipse at center,
+        hsla(0, 0%, 100%, 0.9) 20%,
+        hsla(158, 64%, 52%, 0.1) 70%,
+        transparent 100%);
+    background-blend-mode: overlay;
+  }
+
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 }
 
