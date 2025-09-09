@@ -24,8 +24,8 @@ export default function HeroSection() {
     <section id="home" className="min-h-screen code-bg flex items-center justify-center relative">
       <FloatingParticles />
       
-      <div className="container mx-auto px-6 hero-content">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 sm:px-6 hero-content">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           <motion.div 
             className="text-center lg:text-left"
             initial={{ opacity: 0, x: -50 }}
@@ -65,14 +65,14 @@ export default function HeroSection() {
             </motion.p>
             
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4 mb-8"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
               <motion.button 
                 onClick={downloadResume}
-                className="glass px-8 py-4 rounded-lg hover:bg-[var(--matrix-green)] hover:text-[var(--tech-navy)] transition-all duration-300 font-semibold"
+                className="glass px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-[var(--matrix-green)] hover:text-[var(--tech-navy)] transition-all duration-300 font-semibold"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 style={{ 
@@ -86,7 +86,7 @@ export default function HeroSection() {
               
               <motion.button 
                 onClick={viewProjects}
-                className="border border-[var(--matrix-green)] px-8 py-4 rounded-lg hover:bg-[var(--matrix-green)] hover:text-[var(--tech-navy)] transition-all duration-300 font-semibold"
+                className="border border-[var(--matrix-green)] px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-[var(--matrix-green)] hover:text-[var(--tech-navy)] transition-all duration-300 font-semibold"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

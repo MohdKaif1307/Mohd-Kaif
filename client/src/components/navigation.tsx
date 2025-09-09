@@ -41,7 +41,7 @@ export default function Navigation() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex justify-between items-center">
           <Link href="/">
             <motion.div 
@@ -79,7 +79,7 @@ export default function Navigation() {
           </div>
           
           <button 
-            className="md:hidden text-[var(--matrix-green)]"
+            className="md:hidden text-[var(--matrix-green)] p-2 -mr-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <i className="fas fa-bars text-xl"></i>
@@ -89,7 +89,7 @@ export default function Navigation() {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <motion.div
-            className="md:hidden mt-4 p-4 glass-dark rounded-lg"
+            className="md:hidden mt-3 p-3 glass-dark rounded-lg"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -98,7 +98,7 @@ export default function Navigation() {
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className="block w-full text-left py-2 hover:text-[var(--matrix-green)] transition-colors duration-300 capitalize"
+                className="block w-full text-left py-2.5 hover:text-[var(--matrix-green)] transition-colors duration-300 capitalize"
               >
                 {item}
               </button>

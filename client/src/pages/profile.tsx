@@ -59,7 +59,7 @@ export default function Profile() {
           <div className="max-w-6xl mx-auto space-y-8">
             {/* Personal Information & Photo */}
             <motion.div 
-              className="glass-dark rounded-2xl p-8"
+              className="glass-dark rounded-2xl p-6 md:p-8"
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -71,7 +71,7 @@ export default function Profile() {
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <div className="w-64 h-64 mx-auto rounded-full overflow-hidden border-4 border-[var(--matrix-green)] shadow-lg shadow-[var(--matrix-green)]/30 bg-gradient-to-br from-[var(--matrix-green)]/20 to-white/20 backdrop-blur-sm relative">
+                    <div className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 mx-auto rounded-full overflow-hidden border-4 border-[var(--matrix-green)] shadow-lg shadow-[var(--matrix-green)]/30 bg-gradient-to-br from-[var(--matrix-green)]/20 to-white/20 backdrop-blur-sm relative">
                       <img 
                         src="/images/mohd_kaif_photo2.png" 
                         alt="Mohd Kaif - Professional Photo"
@@ -148,7 +148,7 @@ export default function Profile() {
 
             {/* Professional Summary */}
             <motion.div 
-              className="glass-dark rounded-xl p-8"
+              className="glass-dark rounded-xl p-6 md:p-8"
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.6, delay: 0.8 }}
@@ -170,7 +170,7 @@ export default function Profile() {
             <div className="grid lg:grid-cols-2 gap-8">
               {/* Current Experience */}
               <motion.div 
-                className="glass-dark rounded-xl p-8"
+                className="glass-dark rounded-xl p-6 md:p-8"
                 initial={{ opacity: 0, x: -50 }}
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -210,7 +210,7 @@ export default function Profile() {
 
               {/* Education */}
               <motion.div 
-                className="glass-dark rounded-xl p-8"
+                className="glass-dark rounded-xl p-6 md:p-8"
                 initial={{ opacity: 0, x: 50 }}
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
