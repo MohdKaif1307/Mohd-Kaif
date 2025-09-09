@@ -56,10 +56,10 @@ export default function Profile() {
             </p>
           </motion.div>
 
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto space-y-8">
             {/* Personal Information & Photo */}
             <motion.div 
-              className="glass-dark rounded-2xl p-8 mb-8"
+              className="glass-dark rounded-2xl p-8"
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -144,6 +144,27 @@ export default function Profile() {
                   </div>
                 </div>
               </div>
+            </motion.div>
+
+            {/* Professional Summary */}
+            <motion.div 
+              className="glass-dark rounded-xl p-8"
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              <h3 className="text-2xl font-bold text-[var(--matrix-green)] mb-6 flex items-center">
+                <i className="fas fa-user-tie mr-3"></i>
+                Professional Summary
+              </h3>
+              
+              <p className="text-gray-300 leading-relaxed text-lg">
+                Results-oriented Data Analyst with proven expertise in Python, SQL, and analytics tools, 
+                currently driving business insights through automation and dashboard creation. Actively expanding 
+                into data science through machine learning projects and statistical modeling. Passionate about 
+                transforming complex datasets into strategic business value while building expertise in advanced 
+                analytics and predictive modeling.
+              </p>
             </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-8">
@@ -238,26 +259,7 @@ export default function Profile() {
               </motion.div>
             </div>
 
-            {/* Professional Summary */}
-            <motion.div 
-              className="glass-dark rounded-xl p-8 mt-8"
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            >
-              <h3 className="text-2xl font-bold text-[var(--matrix-green)] mb-6 flex items-center">
-                <i className="fas fa-user-tie mr-3"></i>
-                Professional Summary
-              </h3>
-              
-              <p className="text-gray-300 leading-relaxed text-lg">
-                Results-oriented Data Analyst with proven expertise in Python, SQL, and analytics tools, 
-                currently driving business insights through automation and dashboard creation. Actively expanding 
-                into data science through machine learning projects and statistical modeling. Passionate about 
-                transforming complex datasets into strategic business value while building expertise in advanced 
-                analytics and predictive modeling.
-              </p>
-            </motion.div>
+            
           </div>
         </div>
       </section>

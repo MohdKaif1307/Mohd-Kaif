@@ -49,7 +49,7 @@ export default function Navigation() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              MK.dev
+              Mohd Kaif
             </motion.div>
           </Link>
           
