@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -18,6 +18,12 @@ function Router() {
 }
 
 function App() {
+  const [location] = useLocation();
+  // Scroll to top on route change (except when using hash for in-page navigation)
+  if (!location.includes('#')) {
+    // microtask to let route render first
+    queueMicrotask(() => window.scrollTo(0, 0));
+  }
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>

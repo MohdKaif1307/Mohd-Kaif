@@ -73,7 +73,7 @@ export default function Profile() {
                   >
                     <div className="w-64 h-64 mx-auto rounded-full overflow-hidden border-4 border-[var(--matrix-green)] shadow-lg shadow-[var(--matrix-green)]/30 bg-gradient-to-br from-[var(--matrix-green)]/20 to-white/20 backdrop-blur-sm relative">
                       <img 
-                        src="/images/mohd_kaif_photo.jpg" 
+                        src="/images/mohd_kaif_photo2.png" 
                         alt="Mohd Kaif - Professional Photo"
                         className="w-full h-full object-cover object-center"
                         style={{

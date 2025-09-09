@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [location, navigate] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,9 +17,17 @@ export default function Navigation() {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (location !== '/') {
+      navigate(`/#${sectionId}`);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const nav = document.querySelector('nav');
+        const navHeight = nav ? (nav as HTMLElement).offsetHeight : 0;
+        const elementTop = element.getBoundingClientRect().top + window.scrollY;
+        const targetY = Math.max(0, elementTop - navHeight - 8);
+        window.scrollTo({ top: targetY, behavior: 'smooth' });
+      }
     }
     setIsMobileMenuOpen(false);
   };

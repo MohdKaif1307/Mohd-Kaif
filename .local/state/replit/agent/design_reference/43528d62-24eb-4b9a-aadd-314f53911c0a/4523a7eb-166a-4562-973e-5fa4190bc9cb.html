@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohd Kaif - Data Scientist Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2C3E50',
+                        'secondary': '#3498DB',  
+                        'accent': '#E74C3C',
+                        'highlight': '#F39C12',
+                        'text': '#34495E'
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                        'code': ['Source Code Pro', 'monospace']
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'scale-in': 'scaleIn 0.5s ease-out'
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes scaleIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .skill-bar {
+            height: 6px;
+            background: linear-gradient(90deg, #3498DB, #E74C3C);
+            border-radius: 3px;
+            transform-origin: left;
+            animation: fillBar 2s ease-out;
+        }
+        @keyframes fillBar {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+        }
+        .timeline-line {
+            background: linear-gradient(to bottom, #3498DB, #E74C3C);
+        }
+    </style>
+</head>
+<body class="font-body text-text bg-white overflow-x-hidden">
+
+    <!-- Navigation -->
+    <!-- @COMPONENT: Navigation [fixed top navigation with smooth scrolling] -->
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-display font-bold text-primary">
+                    MK
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-text hover:text-secondary transition-colors duration-300">Home</a>
+                    <a href="#about" class="text-text hover:text-secondary transition-colors duration-300">About</a>
+                    <a href="#experience" class="text-text hover:text-secondary transition-colors duration-300">Experience</a>
+                    <a href="#projects" class="text-text hover:text-secondary transition-colors duration-300">Projects</a>
+                    <a href="#contact" class="text-text hover:text-secondary transition-colors duration-300">Contact</a>
+                </div>
+                <button class="md:hidden text-primary">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- Hero Section -->
+    <!-- @COMPONENT: HeroSection [main introduction with animated elements] -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/50">
+        <div class="absolute inset-0 overflow-hidden">
+            <!-- Floating geometric shapes for visual interest -->
+            <div class="absolute top-20 left-10 w-20 h-20 bg-secondary/10 rounded-full animate-float"></div>
+            <div class="absolute top-40 right-20 w-16 h-16 bg-accent/10 rounded-full animate-float" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-40 left-20 w-24 h-24 bg-highlight/10 rounded-full animate-float" style="animation-delay: 2s;"></div>
+            <div class="absolute bottom-20 right-40 w-12 h-12 bg-primary/10 rounded-full animate-float" style="animation-delay: 0.5s;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="animate-slide-up">
+                <!-- Professional headshot placeholder -->
+                <div class="w-40 h-40 mx-auto mb-8 rounded-full overflow-hidden shadow-2xl border-4 border-white">
+                    <!-- Professional data scientist portrait with modern tech background -->
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" alt="Professional headshot of Mohd Kaif" class="w-full h-full object-cover">
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl font-display font-bold text-primary mb-4">
+                    Mohd Kaif
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-medium text-secondary mb-6">
+                    Data Scientist & Analytics Expert
+                </h2>
+                <p class="text-lg md:text-xl text-text max-w-3xl mx-auto mb-8 leading-relaxed">
+                    Transforming complex datasets into actionable business insights through advanced analytics, 
+                    machine learning, and data visualization. Passionate about leveraging data to drive strategic decisions.
+                </p>
+                
+                <!-- Contact Information -->
+                <div class="flex flex-wrap justify-center gap-6 mb-10 text-sm md:text-base">
+                    <a href="mailto:mr.kabir14320@gmail.com" class="flex items-center gap-2 text-text hover:text-secondary transition-colors">
+                        <i class="fas fa-envelope"></i>
+                        mr.kabir14320@gmail.com
+                    </a>
+                    <a href="tel:+919336828088" class="flex items-center gap-2 text-text hover:text-secondary transition-colors">
+                        <i class="fas fa-phone"></i>
+                        +91 9336828088
+                    </a>
+                    <span class="flex items-center gap-2 text-text">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Haryana, India
+                    </span>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#projects" class="bg-primary text-white px-8 py-4 rounded-full font-medium hover:bg-primary/90 transition-all duration-300 hover:shadow-lg transform hover:scale-105">
+                        View My Work
+                    </a>
+                    <a href="https://www.linkedin.com/in/mohd-kaif-054b17262/" target="_blank" class="bg-white border-2 border-secondary text-secondary px-8 py-4 rounded-full font-medium hover:bg-secondary hover:text-white transition-all duration-300 hover:shadow-lg transform hover:scale-105">
+                        <i class="fab fa-linkedin mr-2"></i>
+                        Connect on LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-2xl text-secondary"></i>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- About Section -->
+    <!-- @COMPONENT: AboutSection [professional summary with skills visualization] -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-primary mb-6">About Me</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-secondary to-accent mx-auto mb-8"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <p class="text-lg leading-relaxed text-text">
+                        Highly motivated data scientist with a strong foundation in data analysis, statistical modeling, 
+                        and machine learning. Proficient in Python programming, with expertise in data visualization 
+                        and MySQL database management.
+                    </p>
+                    <p class="text-lg leading-relaxed text-text">
+                        I specialize in data cleaning and exploratory data analysis (EDA), with advanced problem-solving 
+                        skills for extracting insights from complex datasets. My passion lies in leveraging data 
+                        to drive actionable business decisions.
+                    </p>
+                    
+                    <!-- Education Section -->
+                    <div class="bg-gray-50 rounded-2xl p-6 mt-8">
+                        <h3 class="text-2xl font-display font-semibold text-primary mb-4">Education</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h4 class="font-semibold text-text">B.Sc</h4>
+                                    <p class="text-sm text-gray-600">Professor Rajendra Prasad University (U.P.)</p>
+                                </div>
+                                <span class="text-sm font-medium text-secondary">2023</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h4 class="font-semibold text-text">Class 12th</h4>
+                                    <p class="text-sm text-gray-600">Mother Suhag Inter College (U.P.)</p>
+                                </div>
+                                <span class="text-sm font-medium text-secondary">2019</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Skills Visualization -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-display font-semibold text-primary mb-8">Technical Skills</h3>
+                        
+                        <!-- Programming Languages -->
+                        <div class="mb-8">
+                            <h4 class="text-lg font-semibold text-text mb-4">Programming & Languages</h4>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="text-text font-medium">Python</span>
+                                        <span class="text-secondary font-medium">90%</span>
+                                    </div>
+                                    <div class="bg-gray-200 rounded-full h-2">
+                                        <div class="skill-bar rounded-full" style="width: 90%;"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="text-text font-medium">SQL</span>
+                                        <span class="text-secondary font-medium">85%</span>
+                                    </div>
+                                    <div class="bg-gray-200 rounded-full h-2">
+                                        <div class="skill-bar rounded-full" style="width: 85%; animation-delay: 0.2s;"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="text-text font-medium">VBA</span>
+                                        <span class="text-secondary font-medium">75%</span>
+                                    </div>
+                                    <div class="bg-gray-200 rounded-full h-2">
+                                        <div class="skill-bar rounded-full" style="width: 75%; animation-delay: 0.4s;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Analytics & Tools -->
+                        <div class="mb-8">
+                            <h4 class="text-lg font-semibold text-text mb-4">Analytics & Visualization</h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-gradient-to-br from-secondary/10 to-accent/10 rounded-xl p-4 text-center hover-lift">
+                                    <i class="fas fa-chart-line text-2xl text-secondary mb-2"></i>
+                                    <p class="font-medium">Predictive Analytics</p>
+                                </div>
+                                <div class="bg-gradient-to-br from-highlight/10 to-secondary/10 rounded-xl p-4 text-center hover-lift">
+                                    <i class="fas fa-chart-bar text-2xl text-highlight mb-2"></i>
+                                    <p class="font-medium">Data Visualization</p>
+                                </div>
+                                <div class="bg-gradient-to-br from-accent/10 to-highlight/10 rounded-xl p-4 text-center hover-lift">
+                                    <i class="fas fa-table text-2xl text-accent mb-2"></i>
+                                    <p class="font-medium">Excel Advanced</p>
+                                </div>
+                                <div class="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl p-4 text-center hover-lift">
+                                    <i class="fas fa-database text-2xl text-primary mb-2"></i>
+                                    <p class="font-medium">MySQL</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AboutSection -->
+
+    <!-- Experience Section -->
+    <!-- @COMPONENT: ExperienceSection [timeline-based work experience showcase] -->
+    <section id="experience" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-primary mb-6">Professional Experience</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-secondary to-accent mx-auto mb-8"></div>
+                <p class="text-lg text-text max-w-3xl mx-auto">
+                    A comprehensive journey through my professional career in data science and analytics
+                </p>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-1 h-full timeline-line rounded-full"></div>
+                
+                <!-- Experience Items -->
+                <div class="space-y-12">
+                    <!-- Current Position -->
+                    <div class="relative flex items-center">
+                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="md:hidden absolute left-4 transform -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-white shadow-lg z-10"></div>
+                        
+                        <div class="ml-10 md:ml-0 md:w-1/2 md:pr-8 md:text-right">
+                            <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift border border-gray-100">
+                                <div class="flex md:justify-end justify-start items-center gap-3 mb-4">
+                                    <div class="bg-accent/10 rounded-full p-2">
+                                        <i class="fas fa-briefcase text-accent"></i>
+                                    </div>
+                                    <span class="text-sm font-medium text-accent bg-accent/10 px-3 py-1 rounded-full">Current</span>
+                                </div>
+                                <h3 class="text-2xl font-display font-bold text-primary mb-2">Data Analyst</h3>
+                                <h4 class="text-lg font-semibold text-secondary mb-2">The Red Carpet Ventures, Gurugram</h4>
+                                <p class="text-sm text-gray-600 mb-4">August 2024 – Present</p>
+                                <ul class="text-text space-y-2 text-left">
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-check-circle text-secondary mt-1 text-sm"></i>
+                                        <span>Managed and analyzed large datasets using Excel, ensuring accuracy and delivering actionable insights</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-check-circle text-secondary mt-1 text-sm"></i>
+                                        <span>Automated data workflows using Google Apps Script and Python with Selenium and Beautiful Soup</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-check-circle text-secondary mt-1 text-sm"></i>
+                                        <span>Created impactful dashboards and visualizations to communicate insights to stakeholders</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Previous Position 1 -->
+                    <div class="relative flex items-center">
+                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-secondary rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="md:hidden absolute left-4 transform -translate-x-1/2 w-4 h-4 bg-secondary rounded-full border-4 border-white shadow-lg z-10"></div>
+                        
+                        <div class="ml-10 md:ml-0 md:w-1/2 md:ml-auto md:pl-8">
+                            <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift border border-gray-100">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="bg-secondary/10 rounded-full p-2">
+                                        <i class="fas fa-chart-line text-secondary"></i>
+                                    </div>
+                                </div>
+                                <h3 class="text-2xl font-display font-bold text-primary mb-2">Data Analyst</h3>
+                                <h4 class="text-lg font-semibold text-secondary mb-2">32Mobiles, Gurugram</h4>
+                                <p class="text-sm text-gray-600 mb-4">October 2023 – June 2024</p>
+                                <ul class="text-text space-y-2">
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-check-circle text-secondary mt-1 text-sm"></i>
+                                        <span>Utilized advanced Excel functions improving reporting efficiency by 30%</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-check-circle text-secondary mt-1 text-sm"></i>
+                                        <span>Developed complex SQL queries to extract and analyze large datasets</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-check-circle text-secondary mt-1 text-sm"></i>
+                                        <span>Created data-driven dashboards in Excel and Tableau for strategic decision-making</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Internship -->
+                    <div class="relative flex items-center">
+                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-highlight rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="md:hidden absolute left-4 transform -translate-x-1/2 w-4 h-4 bg-highlight rounded-full border-4 border-white shadow-lg z-10"></div>
+                        
+                        <div class="ml-10 md:ml-0 md:w-1/2 md:pr-8 md:text-right">
+                            <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift border border-gray-100">
+                                <div class="flex md:justify-end justify-start items-center gap-3 mb-4">
+                                    <div class="bg-highlight/10 rounded-full p-2">
+                                        <i class="fas fa-graduation-cap text-highlight"></i>
+                                    </div>
+                                    <span class="text-sm font-medium text-highlight bg-highlight/10 px-3 py-1 rounded-full">Internship</span>
+                                </div>
+                                <h3 class="text-2xl font-display font-bold text-primary mb-2">Data Scientist</h3>
+                                <h4 class="text-lg font-semibold text-secondary mb-2">A.A.M Infotech Pvt. Ltd., Gurugram</h4>
+                                <p class="text-sm text-gray-600 mb-4">February – October 2023</p>
+                                <ul class="text-text space-y-2 text-left">
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-check-circle text-secondary mt-1 text-sm"></i>
+                                        <span>Used automated tools to extract data from primary and secondary sources</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-check-circle text-secondary mt-1 text-sm"></i>
+                                        <span>Created data visualization graphics using Python and Tableau</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-check-circle text-secondary mt-1 text-sm"></i>
+                                        <span>Performed data analysis and modeling providing strategic insights to management</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ExperienceSection -->
+
+    <!-- Projects Section -->
+    <!-- @COMPONENT: ProjectsSection [portfolio gallery with detailed case studies] -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-primary mb-6">Featured Projects</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-secondary to-accent mx-auto mb-8"></div>
+                <p class="text-lg text-text max-w-3xl mx-auto">
+                    Showcasing my expertise through hands-on projects that demonstrate real-world problem-solving
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+                <!-- Project 1: Sales Analysis -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift border border-gray-100 group">
+                    <div class="relative overflow-hidden">
+                        <!-- Modern data visualization dashboard with charts and graphs -->
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Sales analysis dashboard showing charts and data visualization" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Excel & VBA
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-display font-bold text-primary mb-3">Sales Analysis Project</h3>
+                        <p class="text-text mb-4 leading-relaxed">
+                            Comprehensive sales data analysis identifying top-selling products, profit margins, 
+                            and peak time periods using advanced Excel functions and VBA automation.
+                        </p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Advanced Excel functions and formulas</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Large dataset manipulation and cleaning</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Strategic insights for revenue growth</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-medium">Excel</span>
+                            <span class="bg-highlight/10 text-highlight px-3 py-1 rounded-full text-xs font-medium">VBA</span>
+                            <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium">Analysis</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2: Pizza Delivery Analysis -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift border border-gray-100 group">
+                    <div class="relative overflow-hidden">
+                        <!-- Database visualization with SQL queries and data tables -->
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Database schema visualization with SQL queries and data relationships" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+                            SQL Project
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-display font-bold text-primary mb-3">Pizza Delivery Sales Analysis</h3>
+                        <p class="text-text mb-4 leading-relaxed">
+                            Complete database project with schema creation, data import from Excel via VBA, 
+                            and comprehensive SQL analysis for business insights.
+                        </p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Database schema design and implementation</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>DDL and DML query optimization</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Data cleaning and accuracy validation</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">SQL</span>
+                            <span class="bg-highlight/10 text-highlight px-3 py-1 rounded-full text-xs font-medium">VBA</span>
+                            <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-medium">Database</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3: House Price Prediction -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover-lift border border-gray-100 group">
+                    <div class="relative overflow-hidden">
+                        <!-- Modern tech interface showing machine learning models and predictions -->
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h-600" alt="Machine learning interface showing predictive models and data analysis" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Machine Learning
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-display font-bold text-primary mb-3">Real Estate Price Prediction</h3>
+                        <p class="text-text mb-4 leading-relaxed">
+                            Machine learning model for predicting residential housing prices using the KC House dataset, 
+                            analyzing features like bedrooms, bathrooms, and square footage.
+                        </p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Predictive modeling and feature engineering</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Market price analysis and pattern identification</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <i class="fas fa-check text-secondary"></i>
+                                <span>Investment decision support system</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium">Python</span>
+                            <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-medium">ML</span>
+                            <span class="bg-highlight/10 text-highlight px-3 py-1 rounded-full text-xs font-medium">Kaggle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certification Section -->
+            <div class="mt-16 text-center">
+                <h3 class="text-2xl font-display font-bold text-primary mb-8">Professional Certification</h3>
+                <div class="bg-gradient-to-r from-secondary/10 to-accent/10 rounded-2xl p-8 max-w-2xl mx-auto">
+                    <div class="flex items-center justify-center gap-4 mb-4">
+                        <div class="bg-secondary/20 rounded-full p-3">
+                            <i class="fas fa-certificate text-2xl text-secondary"></i>
+                        </div>
+                        <div class="text-left">
+                            <h4 class="text-xl font-semibold text-primary">Data Scientist with Python</h4>
+                            <p class="text-secondary font-medium">Ducat INDIA, Gurugram</p>
+                        </div>
+                    </div>
+                    <p class="text-text">
+                        Comprehensive certification covering advanced Python programming, statistical analysis, 
+                        machine learning algorithms, and data visualization techniques.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ProjectsSection -->
+
+    <!-- Contact Section -->
+    <!-- @COMPONENT: ContactSection [professional contact form with social links] -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-primary to-secondary text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">Let's Work Together</h2>
+                <div class="w-24 h-1 bg-white mx-auto mb-8"></div>
+                <p class="text-lg text-white/90 max-w-3xl mx-auto">
+                    Ready to transform your data into actionable insights? Let's discuss how I can help drive your business forward.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-display font-bold mb-6">Get In Touch</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4">
+                                <div class="bg-white/20 rounded-full p-3">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Email</p>
+                                    <a href="mailto:mr.kabir14320@gmail.com" class="text-white/90 hover:text-white transition-colors">
+                                        mr.kabir14320@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="bg-white/20 rounded-full p-3">
+                                    <i class="fas fa-phone text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Phone</p>
+                                    <a href="tel:+919336828088" class="text-white/90 hover:text-white transition-colors">
+                                        +91 9336828088
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="bg-white/20 rounded-full p-3">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Location</p>
+                                    <p class="text-white/90">Haryana, India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Connect With Me</h4>
+                        <div class="flex gap-4">
+                            <a href="https://www.linkedin.com/in/mohd-kaif-054b17262/" target="_blank" class="bg-white/20 hover:bg-white/30 rounded-full p-3 transition-all duration-300 transform hover:scale-110">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="mailto:mr.kabir14320@gmail.com" class="bg-white/20 hover:bg-white/30 rounded-full p-3 transition-all duration-300 transform hover:scale-110">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                    <form class="space-y-6" data-implementation="Contact form should be connected to backend service">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">First Name</label>
+                                <input type="text" class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/70 focus:outline-none focus:border-white/50 transition-colors" placeholder="Your first name" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Last Name</label>
+                                <input type="text" class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/70 focus:outline-none focus:border-white/50 transition-colors" placeholder="Your last name" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/70 focus:outline-none focus:border-white/50 transition-colors" placeholder="your.email@example.com" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Project Type</label>
+                            <select class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white/50 transition-colors">
+                                <option value="" class="text-gray-800">Select project type</option>
+                                <option value="data-analysis" class="text-gray-800">Data Analysis</option>
+                                <option value="machine-learning" class="text-gray-800">Machine Learning</option>
+                                <option value="dashboard" class="text-gray-800">Dashboard Development</option>
+                                <option value="consultation" class="text-gray-800">Data Science Consultation</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Message</label>
+                            <textarea rows="4" class="w-full bg-white/20 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/70 focus:outline-none focus:border-white/50 transition-colors resize-none" placeholder="Tell me about your project requirements..." required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-white text-primary font-semibold py-3 px-6 rounded-lg hover:bg-white/90 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            Send Message
+                            <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactSection -->
+
+    <!-- Footer -->
+    <!-- @COMPONENT: Footer [minimal footer with copyright] -->
+    <footer class="bg-primary text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-sm text-white/80">
+                        © 2024 Mohd Kaif. All rights reserved.
+                    </p>
+                </div>
+                <div class="flex gap-6 text-sm text-white/80">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="hover:text-white transition-colors">
+                        Back to Top <i class="fas fa-arrow-up ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- JavaScript for Interactive Features -->
+    <script>
+        (function() {
+            // Smooth scrolling for navigation links
+            // TODO: Implement smooth scrolling functionality
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Navbar background on scroll
+            // TODO: Implement navbar background change on scroll
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 100) {
+                    nav.classList.add('bg-white/95');
+                    nav.classList.remove('bg-white/90');
+                } else {
+                    nav.classList.add('bg-white/90');
+                    nav.classList.remove('bg-white/95');
+                }
+            });
+
+            // Intersection Observer for animations
+            // TODO: Implement scroll-triggered animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-slide-up');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            document.querySelectorAll('.hover-lift').forEach(function(el) {
+                observer.observe(el);
+            });
+
+            // Form submission handler
+            // TODO: Connect form to backend service for email handling
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement form submission logic
+                    alert('Thank you for your message! I\'ll get back to you soon.');
+                });
+            }
+
+            // Mobile menu toggle
+            // TODO: Implement mobile menu functionality
+            const mobileMenuButton = document.querySelector('.md\\:hidden button');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    // TODO: Add mobile menu toggle functionality
+                    console.log('Mobile menu clicked');
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
