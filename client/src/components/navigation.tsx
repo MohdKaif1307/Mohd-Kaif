@@ -34,7 +34,7 @@ export default function Navigation() {
 
   return (
     <motion.nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-300 overflow-x-hidden ${
         isScrolled ? 'glass-dark' : 'glass-dark opacity-70'
       }`}
       initial={{ y: -100 }}
@@ -79,7 +79,7 @@ export default function Navigation() {
           </div>
           
           <button 
-            className="md:hidden text-[var(--matrix-green)] p-2 -mr-2"
+            className="md:hidden text-[var(--matrix-green)] p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <i className="fas fa-bars text-xl"></i>
